@@ -4,11 +4,12 @@
 import 'dart:html';
 
 void main() {
-  TableElement demoTable = buildTable();
+  int numOfCells = 1100;
+  TableElement demoTable = buildTable(numOfCells);
   querySelector('#output').children.add(demoTable);
 }
 
-TableElement buildTable() {
+TableElement buildTable(int numCells) {
   // creating the table
   TableElement table = new TableElement();
 
@@ -19,7 +20,7 @@ TableElement buildTable() {
   TableSectionElement tBody = table.createTBody();
 
   // appending cells into tBody
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < numCells; i++) {
     tBody.insertRow(i).text = "Cell $i";
   }
 
